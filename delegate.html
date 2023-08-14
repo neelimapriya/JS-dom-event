@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+<body>
+    <h1>Explore event Delegate</1>
+    <section>
+        <ul id="list-container">
+            <li class="item">lorem ipsum </li>
+            <li class="item">Lorem, ipsum .</li>
+            <li class="item">Illo, excepturi </li>
+            <li class="item">Perspiciatis non.</li>
+            <li class="item">Molestiae,deserunt</li>
+            <li class="item">Rerum, dolore vero.</li>
+            <li class="item">Nisi, corporis quae.</li>
+        </ul>
+        <button id="btn-add-item">add item</button>
+    </section>
+    <script>
+        // const items=document.getElementsByClassName('item');
+        // for (const item of items){
+        //     item.addEventListener('click', function(event){
+        //         // parent ke pawar jonno
+        //         // console.log(event.target.parentNode);
+        //        event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+
+        // new item remove korar jonno
+        document.getElementById('list-container').addEventListener('click', function(event){
+               event.target.parentNode.removeChild(event.target);
+            })
+        
+
+        document.getElementById('btn-add-item').addEventListener('click', function(){
+            const listContainer=document.getElementById('list-container');
+            const li = document.createElement('li');
+            li.innerText="brand new item added";
+            li.classList.add('item');
+            listContainer.appendChild(li);
+
+        })
+    </script>
+</body>
+</html>
